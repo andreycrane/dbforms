@@ -10,7 +10,6 @@ using System;
 using System.Windows.Forms;
 using System.Data;
 using MySql.Data.MySqlClient;
-using System.Linq;
 using DbForms;
 
 namespace TestForms

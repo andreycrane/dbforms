@@ -18,3 +18,13 @@ E:\SharpDevelop Projects\TestForms\TestForms\bin\Debug\DbForms.dll
 E:\SharpDevelop Projects\TestForms\TestForms\bin\Debug\DbForms.pdb
 C:\Documents and Settings\admin\Мои документы\SharpDevelop Projects\TestForms\TestForms\bin\Debug\DbForms.dll
 C:\Documents and Settings\admin\Мои документы\SharpDevelop Projects\TestForms\TestForms\bin\Debug\DbForms.pdb
+C:\Documents and Settings\admin\Мои документы\SharpDevelop Projects\DbForms\TestForms\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\admin\Мои документы\SharpDevelop Projects\DbForms\TestForms\obj\Debug\TestForms.MainForm.resources
+C:\Documents and Settings\admin\Мои документы\SharpDevelop Projects\DbForms\TestForms\obj\Debug\GenerateResource.read.1.tlog
+C:\Documents and Settings\admin\Мои документы\SharpDevelop Projects\DbForms\TestForms\obj\Debug\GenerateResource.write.1.tlog
+C:\Documents and Settings\admin\Мои документы\SharpDevelop Projects\DbForms\TestForms\obj\Debug\TestForms.exe
+C:\Documents and Settings\admin\Мои документы\SharpDevelop Projects\DbForms\TestForms\obj\Debug\TestForms.pdb
+C:\Documents and Settings\admin\Мои документы\SharpDevelop Projects\DbForms\TestForms\bin\Debug\TestForms.exe
+C:\Documents and Settings\admin\Мои документы\SharpDevelop Projects\DbForms\TestForms\bin\Debug\TestForms.pdb
+C:\Documents and Settings\admin\Мои документы\SharpDevelop Projects\DbForms\TestForms\bin\Debug\DbForms.dll
+C:\Documents and Settings\admin\Мои документы\SharpDevelop Projects\DbForms\TestForms\bin\Debug\DbForms.pdb

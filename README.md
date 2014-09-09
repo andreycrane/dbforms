@@ -31,3 +31,74 @@ Database Forms
 включенном в данный репозиторий, под названием TestForms - представляющий
 небольшое Windows-приложение работающее с тестовой базой данных World входящей
 в поставку "MySQL 5.6".
+
+Примеры
+---------------------------------
+
+Задача: необходима форма для отображения табличных данных взятых из 
+БД.
+
+```csharp
+	using System;
+	using System.Data;
+	using System.Windows.Forms;
+	using MySql.Data.MySqlClient;
+	using DbForms;
+	
+	// Наследуемся от базового класса табличной формы
+	class CityBrowse : BrowseForm
+	{
+		// Объект подключения к СУБД и загружаемой таблицы
+		private MySqlConnection conn;
+		private DataTable tbl;
+		
+		// Определяем дочерний конструктор в котором настраиваем форму
+		public CityBrowse(MySqlConnection conn)
+		{
+			this.conn = conn;
+			this.tbl = new DataTable("city");
+			
+			// заголовок формы
+			this.Title = "Города";
+			// Список отображаемых столбцов
+			// название столбца в объекте источника данных, заголовок, ширина (по умолчанию 100px)
+			this.AddColumn("Name", "Название", 200);
+			this.AddColumn("CountryCode", "Код страны");
+			this.AddColumn("District", "Столица");
+			this.AddColumn("Population", "Численность населения");
+			// определяем кнопки дополнительных действий
+			this.AddAction("Фильтр по стране", this.filterByCountry);
+		}
+		// переопределяем метод загрузки формы
+		// реализуем в ней загрузку данных
+		protected override void formLoad(object sender, EventArgs e) 
+		{	
+			// загружаем данные
+			string strSql = @"select 
+									id,
+									Name,
+									CountryCode,
+									District,
+									Population
+								from city";			
+			MySqlCommand cmd = new MySqlCommand(strSql, this.conn);
+			MySqlDataReader dataReader = cmd.ExecuteReader();
+			this.tbl.Load(dataReader);
+			// определям источник данных отображаемых на форме
+			this.DataSource = this.tbl;
+		}
+		// определяем действия выполняемы по нажатию на кнопки "Создать", "Редактировать", "Удалить"
+		protected sealed override void btnCreate_Click(object sender, EventArgs e) {}
+		protected sealed override void btnEdit_Click(object sender, EventArgs e) {}
+		protected sealed override void btnDelete_Click(object sender, EventArgs e) {}
+		// обработчик дополнительного действия фильтра по стране
+		private void filterByCountry(object sender, EventArgs e) { }
+	}
+	
+	CityBrowse form = new CityBrowse(conn);
+	form.ShowDialog();
+```
+
+В результате получаем слeдующее:
+
+![Изображение результрующей формы](http://firepic.org/images/2014-09/09/emscb2s8a8x3.png "Результирующая форма")
