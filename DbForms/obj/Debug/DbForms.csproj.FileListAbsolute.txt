@@ -1,0 +1,20 @@
+E:\SharpDevelop Projects\TestForms\DbForms\obj\Debug\ResolveAssemblyReference.cache
+E:\SharpDevelop Projects\TestForms\DbForms\bin\Debug\DbForms.dll
+E:\SharpDevelop Projects\TestForms\DbForms\bin\Debug\DbForms.pdb
+E:\SharpDevelop Projects\TestForms\DbForms\obj\Debug\DbForms.dll
+E:\SharpDevelop Projects\TestForms\DbForms\obj\Debug\DbForms.pdb
+E:\SharpDevelop Projects\TestForms\DbForms\obj\Debug\GenerateResource.read.1.tlog
+E:\SharpDevelop Projects\TestForms\DbForms\obj\Debug\GenerateResource.write.1.tlog
+E:\SharpDevelop Projects\TestForms\DbForms\obj\Debug\DbForms.BrowseForm.resources
+E:\SharpDevelop Projects\TestForms\DbForms\obj\Debug\DbForms.SelectForm.resources
+E:\SharpDevelop Projects\TestForms\DbForms\obj\Debug\DbForms.EditForm.resources
+C:\Documents and Settings\admin\Мои документы\SharpDevelop Projects\TestForms\DbForms\bin\Debug\DbForms.dll
+C:\Documents and Settings\admin\Мои документы\SharpDevelop Projects\TestForms\DbForms\bin\Debug\DbForms.pdb
+C:\Documents and Settings\admin\Мои документы\SharpDevelop Projects\TestForms\DbForms\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\admin\Мои документы\SharpDevelop Projects\TestForms\DbForms\obj\Debug\DbForms.EditForm.resources
+C:\Documents and Settings\admin\Мои документы\SharpDevelop Projects\TestForms\DbForms\obj\Debug\DbForms.BrowseForm.resources
+C:\Documents and Settings\admin\Мои документы\SharpDevelop Projects\TestForms\DbForms\obj\Debug\DbForms.SelectForm.resources
+C:\Documents and Settings\admin\Мои документы\SharpDevelop Projects\TestForms\DbForms\obj\Debug\GenerateResource.read.1.tlog
+C:\Documents and Settings\admin\Мои документы\SharpDevelop Projects\TestForms\DbForms\obj\Debug\GenerateResource.write.1.tlog
+C:\Documents and Settings\admin\Мои документы\SharpDevelop Projects\TestForms\DbForms\obj\Debug\DbForms.dll
+C:\Documents and Settings\admin\Мои документы\SharpDevelop Projects\TestForms\DbForms\obj\Debug\DbForms.pdb

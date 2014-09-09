@@ -1,0 +1,10 @@
+C:\Documents and Settings\admin\Мои документы\SharpDevelop Projects\TestForms\TestForms\bin\Debug\TestForms.exe
+C:\Documents and Settings\admin\Мои документы\SharpDevelop Projects\TestForms\TestForms\bin\Debug\TestForms.pdb
+C:\Documents and Settings\admin\Мои документы\SharpDevelop Projects\TestForms\TestForms\bin\Debug\DbForms.dll
+C:\Documents and Settings\admin\Мои документы\SharpDevelop Projects\TestForms\TestForms\bin\Debug\DbForms.pdb
+C:\Documents and Settings\admin\Мои документы\SharpDevelop Projects\TestForms\TestForms\obj\Xml\ResolveAssemblyReference.cache
+C:\Documents and Settings\admin\Мои документы\SharpDevelop Projects\TestForms\TestForms\obj\Xml\TestForms.MainForm.resources
+C:\Documents and Settings\admin\Мои документы\SharpDevelop Projects\TestForms\TestForms\obj\Xml\GenerateResource.read.1.tlog
+C:\Documents and Settings\admin\Мои документы\SharpDevelop Projects\TestForms\TestForms\obj\Xml\GenerateResource.write.1.tlog
+C:\Documents and Settings\admin\Мои документы\SharpDevelop Projects\TestForms\TestForms\obj\Xml\TestForms.exe
+C:\Documents and Settings\admin\Мои документы\SharpDevelop Projects\TestForms\TestForms\obj\Xml\TestForms.pdb

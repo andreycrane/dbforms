@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+# SharpDevelop 4.4
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestForms", "TestForms\TestForms.csproj", "{0E5B64A0-47C6-4B41-985E-70BCA77E1B6F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DbForms", "DbForms\DbForms.csproj", "{EB754B90-BB07-467A-988E-38BA6E1321DD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{76B5A373-8AF0-4EB3-82B9-0F7A8FF60981}"
+	ProjectSection(SolutionItems) = postProject
+		README.md = README.md
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+		Xml|Any CPU = Xml|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0E5B64A0-47C6-4B41-985E-70BCA77E1B6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E5B64A0-47C6-4B41-985E-70BCA77E1B6F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E5B64A0-47C6-4B41-985E-70BCA77E1B6F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0E5B64A0-47C6-4B41-985E-70BCA77E1B6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB754B90-BB07-467A-988E-38BA6E1321DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB754B90-BB07-467A-988E-38BA6E1321DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB754B90-BB07-467A-988E-38BA6E1321DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EB754B90-BB07-467A-988E-38BA6E1321DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB754B90-BB07-467A-988E-38BA6E1321DD}.Xml|Any CPU.Build.0 = Xml|Any CPU
+		{EB754B90-BB07-467A-988E-38BA6E1321DD}.Xml|Any CPU.ActiveCfg = Xml|Any CPU
+		{0E5B64A0-47C6-4B41-985E-70BCA77E1B6F}.Xml|Any CPU.Build.0 = Xml|Any CPU
+		{0E5B64A0-47C6-4B41-985E-70BCA77E1B6F}.Xml|Any CPU.ActiveCfg = Xml|Any CPU
+	EndGlobalSection
+EndGlobal
