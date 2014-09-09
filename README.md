@@ -35,7 +35,7 @@ Database Forms
 Примеры
 ---------------------------------
 
-###Пример №1
+####Пример №1
 
 
 Задача: необходима форма для отображения табличных данных взятых из 
@@ -108,7 +108,7 @@ Database Forms
 
 ![Изображение результрующей формы](http://firepic.org/images/2014-09/09/emscb2s8a8x3.png "Результирующая форма")
 
-###Пример №2
+####Пример №2
 
 Задача: Необходима форма для редактирования строки табличных данных. Одно из полей 
 должно заполнятся данными из справочника.
@@ -178,3 +178,57 @@ Database Forms
 
 В результате получаем:
 ![Если Вы видите это текст, значит фотохостер меня обманул :(](http://firepic.org/images/2014-09/09/xt73nwlh6naz.png "Форма редактирования записи БД")
+
+####Пример №3
+
+Задача: Нам необходима форма для выбора строки данных из некоторой таблицы
+для заполнения поля значением первичного ключа из этой строки. Проще говоря
+выбрать справочные данные.
+
+```csharp
+	// Реализуем абстрактный базовый класс SelectForm
+	class SelCountryCode : SelectForm 
+	{
+		private MySqlConnection conn;
+		private DataTable tbl;
+		
+		// Настраиваем форму в конструкторе дочернего класса
+		public SelCountryCode(MySqlConnection conn)
+		{
+			this.tbl = new DataTable("country");
+			
+			this.conn = conn;
+			// Заголовок
+			this.Title = "Выбор кода страны";
+			// Источник данных для формы
+			this.DataSource = this.tbl;
+			
+			// Поля отображаемые на форме
+			// Название поля в источнике данных
+			// Заголовок
+			// Опционально ширина поля
+			this.AddColumn("code", "Код");
+			this.AddColumn("name", "Название", 170);
+			this.AddColumn("continent", "Континент", 200);
+		}
+		// переопределяем загрузку формы 
+		protected override void formLoad(object sender, EventArgs e)
+		{
+			// Загружаем данные в источник
+			MySqlCommand cmd = new MySqlCommand(
+				"select code, name, continent from country", this.conn);
+			
+			MySqlDataReader reader = cmd.ExecuteReader();
+			this.tbl.Load(reader);
+		}
+	}
+	
+	SelCountryCode form = new SelCountryCode(conn);
+	// если пользователь потвердит выбор строки
+	// метод вернет ссылку на выбранную строку
+	// в простивном случае вернет null
+	DataRow r = form.ShowDialog();
+```
+
+В результате получаем:
+![Если здесь нет изображения формы, значит фотохостер меня обманул :(](http://firepic.org/images/2014-09/10/ymq56i3ti187.png "Форма выбора справочной информации")
