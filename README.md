@@ -35,6 +35,9 @@ Database Forms
 Примеры
 ---------------------------------
 
+###Пример №1
+
+
 Задача: необходима форма для отображения табличных данных взятых из 
 БД.
 
@@ -61,7 +64,8 @@ Database Forms
 			// заголовок формы
 			this.Title = "Города";
 			// Список отображаемых столбцов
-			// название столбца в объекте источника данных, заголовок, ширина (по умолчанию 100px)
+			// название столбца в объекте источника данных, 
+			// заголовок, ширина (по умолчанию 100px)
 			this.AddColumn("Name", "Название", 200);
 			this.AddColumn("CountryCode", "Код страны");
 			this.AddColumn("District", "Столица");
@@ -87,7 +91,8 @@ Database Forms
 			// определям источник данных отображаемых на форме
 			this.DataSource = this.tbl;
 		}
-		// определяем действия выполняемы по нажатию на кнопки "Создать", "Редактировать", "Удалить"
+		// определяем действия выполняемы по нажатию 
+		// на кнопки "Создать", "Редактировать", "Удалить"
 		protected sealed override void btnCreate_Click(object sender, EventArgs e) {}
 		protected sealed override void btnEdit_Click(object sender, EventArgs e) {}
 		protected sealed override void btnDelete_Click(object sender, EventArgs e) {}
@@ -102,3 +107,74 @@ Database Forms
 В результате получаем слeдующее:
 
 ![Изображение результрующей формы](http://firepic.org/images/2014-09/09/emscb2s8a8x3.png "Результирующая форма")
+
+###Пример №2
+
+Задача: Необходима форма для редактирования строки табличных данных. Одно из полей 
+должно заполнятся данными из справочника.
+
+```csharp
+
+	// Реализуем абстрактный базовый класс EditForm
+	class CityEdit : EditForm 
+	{
+		// Сылка на редактируемую форму
+		// и объект соединения с БД необходимый для передачи справочнику
+		private DataRow row;
+		private MySqlConnection conn;
+		// Определяем конструктор с тремя параметрами
+		// Редактируемая строка, заголовок форма ("Добавить новую строку",
+		// "Редактировать существующую"), объект соединения с БД
+		public CityEdit(DataRow row, string title, MySqlConnection conn) 
+		{
+			this.row = row;
+			this.Title = title;
+			this.conn = conn;
+			
+			// определяем редактируемые поля
+			this.AddColumn("Name", 						// Наименование столбца в строке
+			               "Название", 					// Заголовок
+			               row.Field<string>("Name"), 	// Начальное значение
+			               properties: new ColumnProperties { 
+			               		Mask = 'C'.Replicate(35) }); // Дополнительные свойства
+							
+			this.AddColumn("CountryCode", 
+				           "Код страны",
+			               row.Field<string>("CountryCode"), 
+			               this.selCountryCode, 	// Обработчик щелча 
+			               							// по ссылке (вызов выбора значения из справочника)
+			               new ColumnProperties { Mask = "LLL", ReadOnly = true });
+			
+			this.AddColumn("Population", 
+			               "Численность населения", 
+			               row.IsNull("Population") ? 0 : row.Field<int>("Population"),
+			               properties: new ColumnProperties { Minimum = 0, Maximum = Int32.MaxValue });
+			
+			this.AddColumn("District", 
+			               "Столица", 
+			               row.Field<string>("District"),
+			               properties: new ColumnProperties { Mask = 'C'.Replicate(20) });
+		}
+		// Переопределяем действие выполняемое по щелчку на кнопке "Ok"
+		// Здесь можно реализовать валидацию данных
+		// заполнения строки данными из добавленных на форму полей
+		protected sealed override void btnOk_Click(object sender, EventArgs e) 
+		{
+			this.row["Name"] = this.GetValue("Name");
+			this.row["CountryCode"] = this.GetValue("CountryCode");
+			this.row["District"] = this.GetValue("District");
+			this.row["Population"] = this.GetValue("Population");
+			
+			this.Close();
+		}
+		// Обработчик щелчка по заголовку-сылке поля (Выбор кода страны
+		// из справочника)
+		private void selCountryCode(object sender, EventArgs e) {}	
+	}
+	
+	CityEdit form = new CityEdit(row, "Добавить Город", conn);
+	form.ShowDialog();
+```
+
+В результате получаем:
+![Если Вы видите это текст, значит фотохостер меня обманул :(](http://firepic.org/images/2014-09/09/xt73nwlh6naz.png "Форма редактирования записи БД")
